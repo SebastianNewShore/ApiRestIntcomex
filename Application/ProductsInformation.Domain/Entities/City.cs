@@ -16,7 +16,7 @@ namespace ProductsInformation.Domain.Entities
         }
         public string Name { get; set; }
         public bool Active { get; set; }
-        public int IdRegion { get; set; }
+        public Guid IdRegion { get; set; }
 
         public virtual Region IdRegionNavigation { get; set; }
         public virtual ICollection<Customer> Customer { get; set; }

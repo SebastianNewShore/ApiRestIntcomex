@@ -13,7 +13,7 @@ namespace ProductsInformation.Domain.Entities
         }
         public string name { get; set; }
         public bool Active { get; set; }
-        public int IdCountry { get; set; }
+        public Guid IdCountry { get; set; }
         public virtual Country IdCountryNavigation { get; set; }
         public virtual ICollection<City> City { get; set; }
     }

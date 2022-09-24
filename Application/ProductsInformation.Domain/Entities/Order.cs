@@ -18,10 +18,10 @@ namespace ProductsInformation.Domain.Entities
         public string ShipName { get; set; }
         public string ShipAdress { get; set; }
         public string ShipPostalCode { get; set; }
-        public int IdCity { get; set; }
-        public int IdCustomers { get; set; }
-        public int IdEmployees { get; set; }
-        public int IdShippers { get; set; }
+        public Guid IdCity { get; set; }
+        public Guid IdCustomers { get; set; }
+        public Guid IdEmployees { get; set; }
+        public Guid IdShippers { get; set; }
 
         public virtual City IdCityNavigation { get; set; }
         public virtual Customer IdCustomersNavigation { get; set; }

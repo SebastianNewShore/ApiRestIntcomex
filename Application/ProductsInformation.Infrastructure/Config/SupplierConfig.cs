@@ -8,11 +8,11 @@ using System.Text;
 
 namespace ProductsInformation.Infrastructure.Config
 {
-    internal class SuppliersConfig : IEntityTypeConfiguration<Supplier>
+    internal class SupplierConfig : IEntityTypeConfiguration<Supplier>
     {
         public void Configure(EntityTypeBuilder<Supplier> builder)
         {
-            builder.ToTable("tbSuppliers");
+            builder.ToTable("tbSupplier");
 
             builder.Property(e => e.adress)
                 .IsRequired()

@@ -19,7 +19,7 @@ namespace ProductsInformation.Domain.Entities
         public string Fax { get; set; }
         public bool Active { get; set; }
         public string PostalCode { get; set; }
-        public int IdCity { get; set; }
+        public Guid IdCity { get; set; }
 
         public virtual City IdCityNavigation { get; set; }
         public virtual ICollection<Order> Order { get; set; }

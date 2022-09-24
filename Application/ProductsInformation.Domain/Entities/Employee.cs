@@ -24,7 +24,7 @@ namespace ProductsInformation.Domain.Entities
         public string Notes { get; set; }
         public string ReportsTo { get; set; }
         public string PostalCode { get; set; }
-        public int IdCity { get; set; }
+        public Guid IdCity { get; set; }
         public bool Active { get; set; }
 
         public virtual City IdCityNavigation { get; set; }

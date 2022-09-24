@@ -20,7 +20,7 @@ namespace ProductsInformation.Domain.Entities
         public string homePage { get; set; }
         public string postalCode { get; set; }
         public bool active { get; set; }
-        public int idCity { get; set; }
+        public Guid idCity { get; set; }
         public virtual City IdCityNavigation { get; set; }
         public virtual ICollection<Product> Product { get; set; }
     }

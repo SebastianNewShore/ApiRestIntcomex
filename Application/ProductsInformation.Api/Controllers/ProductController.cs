@@ -3,6 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ProductsInformation.Domain;
+using ProductsInformation.Application.Services;
+using ProductsInformation.Infrastructure.Context;
+using ProductsInformation.Infrastructure.Repository;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,24 +16,37 @@ namespace ProductsInformation.Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        Products CreateService()
+        {
+            PersistenceContext db = new PersistenceContext();
+            ProductRepository repo = new ProductRepository(db);
+            Products service = new Products(repo,repo);
+            return service;
+        }
+
         // GET: api/<ProductController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<List<Product>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var service = CreateService();
+            return Ok(service.ListAll());
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Product> Get(Guid id)
         {
-            return "value";
+            var service = CreateService();
+            return Ok(service.ListById(id));
         }
 
         // POST api/<ProductController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody] Product product)
         {
+            var service = CreateService();
+            service.Add(product);
+            return Ok("Product added correctly");
         }
     }
 }

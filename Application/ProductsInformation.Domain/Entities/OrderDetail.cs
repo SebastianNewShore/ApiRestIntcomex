@@ -7,8 +7,8 @@ namespace ProductsInformation.Domain.Entities
 {
     public class OrderDetail : EntityBase<Guid>
     {
-        public int IdOrders { get; set; }
-        public int IdProducts { get; set; }
+        public Guid IdOrders { get; set; }
+        public Guid IdProducts { get; set; }
         public int Quantity { get; set; }
         public int Discount { get; set; }
         public decimal UnitPrice { get; set; }

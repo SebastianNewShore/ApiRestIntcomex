@@ -52,8 +52,8 @@ namespace ProductsInformation.Infrastructure.Context
             modelBuilder.ApplyConfiguration(new OrderConfig());
             modelBuilder.ApplyConfiguration(new ProductConfig());
             modelBuilder.ApplyConfiguration(new RegionConfig());
-            modelBuilder.ApplyConfiguration(new ShippersConfig());
-            modelBuilder.ApplyConfiguration(new SuppliersConfig());
+            modelBuilder.ApplyConfiguration(new ShipperConfig());
+            modelBuilder.ApplyConfiguration(new SupplierConfig());
 
             OnModelCreatingPartial(modelBuilder);
         }

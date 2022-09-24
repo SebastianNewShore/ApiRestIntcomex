@@ -12,7 +12,7 @@ namespace ProductsInformation.Infrastructure.Config
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
-            builder.ToTable("tbOrders");
+            builder.ToTable("tbOrder");
 
             builder.Property(e => e.OrderDate).HasColumnType("date");
 
