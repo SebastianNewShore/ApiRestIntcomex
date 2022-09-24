@@ -1,12 +1,16 @@
-﻿using System;
+﻿using ProductsInformation.Domain.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ProductsInformation.Domain.Entities
 {
-    public class Supplier
+    public class Supplier : EntityBase<Guid>
     {
-        public Guid id { get; set; }
+        public Supplier()
+        {
+            Product = new HashSet<Product>();
+        }
         public string companyname { get; set; }
         public string contactname { get; set; }
         public string contacttitle { get; set; }
@@ -17,5 +21,7 @@ namespace ProductsInformation.Domain.Entities
         public string postalcode { get; set; }
         public bool active { get; set; }
         public int idcity { get; set; }
+        public virtual City IdCityNavigation { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

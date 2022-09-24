@@ -1,13 +1,17 @@
-﻿using ProductsInformation.Domain.Entities;
+﻿using ProductsInformation.Domain.Base;
+using ProductsInformation.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ProductsInformation.Domain
 {
-    public class Product
+    public class Product : EntityBase<Guid>
     {
-        public Guid id { get; set; }
+        public Product()
+        {
+            OrderDetail = new HashSet<OrderDetail>();
+        }
         public string productname { get; set; }
         public int quantityperunit { get; set; }
         public decimal unitprice { get; set; }
@@ -17,7 +21,8 @@ namespace ProductsInformation.Domain
         public bool active { get; set; }
         public Guid idsuppliers { get; set; }
         public Guid idcategory { get; set; }
-        public Category Category { get; set; }
-        public Supplier Supplier { get; set; }
+        public virtual Category IdCategoryNavigation { get; set; }
+        public virtual Supplier IdSuppliersNavigation { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }
 }
