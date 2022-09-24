@@ -1,12 +1,13 @@
-﻿using System;
+﻿using ProductsInformation.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ProductsInformation.Domain
 {
-    class Product
+    public class Product
     {
-        public int id { get; set; }
+        public Guid id { get; set; }
         public string productname { get; set; }
         public int quantityperunit { get; set; }
         public decimal unitprice { get; set; }
@@ -14,7 +15,9 @@ namespace ProductsInformation.Domain
         public int unitsonorder { get; set; }
         public int recorderlevel { get; set; }
         public bool active { get; set; }
-        public int idsuppliers { get; set; }
-        public int idcategory { get; set; }
+        public Guid idsuppliers { get; set; }
+        public Guid idcategory { get; set; }
+        public Category Category { get; set; }
+        public Supplier Supplier { get; set; }
     }
 }
