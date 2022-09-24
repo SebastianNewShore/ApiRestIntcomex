@@ -9,11 +9,13 @@ namespace ProductsInformation.Application.Services
 {
     public class Products : IListBaseService<Product, Guid>, IAddBaseService<Product, Guid>
     {
-        private readonly IBaseRepository<Product, Guid> _ProducRepo;
+        private readonly IListBaseRepository<Product, Guid> _ListProducRepo;
+        private readonly IAddBaseRepository<Product, Guid> _AddProducRepo;
 
-        public Products(IBaseRepository<Product, Guid> ProducRepo)
+        public Products(IListBaseRepository<Product, Guid> listProducRepo, IAddBaseRepository<Product, Guid> addProducRepo)
         {
-            _ProducRepo = ProducRepo;
+            _ListProducRepo = listProducRepo;
+            _AddProducRepo = addProducRepo;
         }
 
         public Product Add(Product entity)
@@ -22,8 +24,8 @@ namespace ProductsInformation.Application.Services
             {
                 if (entity != null)
                 {
-                    var result = _ProducRepo.Add(entity);
-                    _ProducRepo.SaveChanges();
+                    var result = _AddProducRepo.Add(entity);
+                    _AddProducRepo.SaveChanges();
                     return result;
                 }
             }
@@ -38,7 +40,7 @@ namespace ProductsInformation.Application.Services
         {
             try
             {
-                return _ProducRepo.ListAll();
+                return _ListProducRepo.ListAll();
             }
             catch (Exception ex)
             {
@@ -50,7 +52,7 @@ namespace ProductsInformation.Application.Services
         {
             try
             {
-                return _ProducRepo.ListById(entityId);
+                return _ListProducRepo.ListById(entityId);
             }
             catch (Exception ex)
             {

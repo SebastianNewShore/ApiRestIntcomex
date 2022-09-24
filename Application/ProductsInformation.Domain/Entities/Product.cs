@@ -12,15 +12,15 @@ namespace ProductsInformation.Domain
         {
             OrderDetail = new HashSet<OrderDetail>();
         }
-        public string productname { get; set; }
-        public int quantityperunit { get; set; }
-        public decimal unitprice { get; set; }
-        public int unitsinstock { get; set; }
-        public int unitsonorder { get; set; }
-        public int recorderlevel { get; set; }
+        public string productName { get; set; }
+        public int quantityPerunit { get; set; }
+        public decimal unitPrice { get; set; }
+        public int unitsinStock { get; set; }
+        public int unitsonOrder { get; set; }
+        public int recorderLevel { get; set; }
         public bool active { get; set; }
-        public Guid idsuppliers { get; set; }
-        public Guid idcategory { get; set; }
+        public Guid idSuppliers { get; set; }
+        public Guid idCategory { get; set; }
         public virtual Category IdCategoryNavigation { get; set; }
         public virtual Supplier IdSuppliersNavigation { get; set; }
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }

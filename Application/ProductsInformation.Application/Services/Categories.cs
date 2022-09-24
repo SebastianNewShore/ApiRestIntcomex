@@ -9,9 +9,9 @@ namespace ProductsInformation.Application.Services
 {
     public class Categories : IAddBaseService<Category, Guid>
     {
-        private readonly IBaseRepository<Category, Guid> _CategoryRepo;
+        private readonly IAddBaseRepository<Category, Guid> _CategoryRepo;
 
-        public Categories(IBaseRepository<Category, Guid> CategoryRepo)
+        public Categories(IAddBaseRepository<Category, Guid> CategoryRepo)
         {
             _CategoryRepo = CategoryRepo;
         }

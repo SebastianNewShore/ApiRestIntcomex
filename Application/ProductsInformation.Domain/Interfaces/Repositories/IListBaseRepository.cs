@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProductsInformation.Domain.Interfaces.Repositories
 {
-    public interface IBaseRepository<TEntity,TEntityId>
-        :IAdd<TEntity>,IList<TEntity, TEntityId>, ITransaction{
+    public interface IListBaseRepository<TEntity,TEntityId>
+        :IList<TEntity, TEntityId>, ITransaction{
     }
 }
