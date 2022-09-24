@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\ProductsInformation.Application\ProductsInformation.Application.csproj" />
+    <ProjectReference Include="..\ProductsInformation.Domain\ProductsInformation.Domain.csproj" />
+    <ProjectReference Include="..\ProductsInformation.Infrastructure\ProductsInformation.Infrastructure.csproj" />
   </ItemGroup>
 
 
