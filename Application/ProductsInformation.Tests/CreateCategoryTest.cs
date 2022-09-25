@@ -10,7 +10,10 @@ namespace ProductsInformation.Tests
 {
     [TestFixture]
     public class CreateCategoryTest
-    {   
+    {
+        ///<summary>
+        ///Test that validates that the result is the same category sent to be created.
+        ///</summary>
         [Test]
         public void AddCategorySuccessTest()
         {
@@ -30,6 +33,9 @@ namespace ProductsInformation.Tests
             Assert.AreEqual(category, result);
         }
 
+        ///<summary>
+        ///Test returning null category.
+        ///</summary>
         [Test]
         public void AddNullCategoryTest()
         {

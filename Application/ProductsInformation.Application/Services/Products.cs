@@ -18,6 +18,9 @@ namespace ProductsInformation.Application.Services
             _AddProducRepo = addProducRepo;
         }
 
+        ///<summary>
+        ///Method consumed by Api Rest controller for product creation.
+        ///</summary>
         public Product Add(Product entity)
         {
             try
@@ -36,6 +39,9 @@ namespace ProductsInformation.Application.Services
             return new Product();
         }
 
+        ///<summary>
+        ///Method consumed by Api Rest controller to fetch the whole list of products.
+        ///</summary>
         public List<Product> ListAll()
         {
             try
@@ -47,7 +53,10 @@ namespace ProductsInformation.Application.Services
                 throw new ArgumentNullException("error bringing list of products: " + ex);
             }
         }
-        
+
+        ///<summary>
+        ///Method consumed by the Api Rest controller to obtain a product based on the id.
+        ///</summary>
         public Product ListById(Guid entityId)
         {
             try

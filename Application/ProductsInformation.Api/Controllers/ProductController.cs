@@ -16,6 +16,9 @@ namespace ProductsInformation.Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        ///<summary>
+        ///Instance for consumption of services is created.
+        ///</summary>
         Products CreateService()
         {
             PersistenceContext db = new PersistenceContext();
@@ -24,7 +27,9 @@ namespace ProductsInformation.Api.Controllers
             return service;
         }
 
-        // GET: api/<ProductController>
+        ///<summary>
+        ///GET() method that fetches all the existing products.
+        ///</summary>
         [HttpGet]
         public ActionResult<List<Product>> Get()
         {
@@ -35,7 +40,9 @@ namespace ProductsInformation.Api.Controllers
                 return Ok(Constants.Constants.existInformation);
         }
 
-        // GET api/<ProductController>/5
+        ///<summary>
+        ///GET() method querying a product by Id.
+        ///</summary>
         [HttpGet("{id}")]
         public ActionResult<Product> Get(Guid id)
         {
@@ -46,7 +53,9 @@ namespace ProductsInformation.Api.Controllers
                 return Ok(Constants.Constants.notFound);
         }
 
-        // POST api/<ProductController>
+        ///<summary>
+        ///Post method creating the Product.
+        ///</summary>
         [HttpPost]
         public ActionResult Post([FromBody] Product product)
         {

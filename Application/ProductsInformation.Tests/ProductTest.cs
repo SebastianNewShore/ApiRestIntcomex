@@ -12,6 +12,9 @@ namespace ProductsInformation.Tests
     [TestFixture]
     public class ProductTest
     {
+        ///<summary>
+        ///Test that validates that the result is the same product sent to be created.
+        ///</summary>
         [Test]
         public void AddProductSuccessTest()
         {
@@ -38,6 +41,9 @@ namespace ProductsInformation.Tests
             Assert.AreEqual(produt, result);
         }
 
+        ///<summary>
+        ///Test returning null product.
+        ///</summary>
         [Test]
         public void AddNullProductTest()
         {
@@ -64,6 +70,9 @@ namespace ProductsInformation.Tests
             Assert.AreEqual(new Product().Id, result.Id);
         }
 
+        ///<summary>
+        ///Test that validates that when sending id, returns product object.
+        ///</summary>
         [Test]
         public void LisProductByIdTest()
         {
@@ -91,6 +100,9 @@ namespace ProductsInformation.Tests
             Assert.AreEqual(produt, result);
         }
 
+        ///<summary>
+        ///Validating test when querying non-existent product returns null.
+        ///</summary>
         [Test]
         public void LisProductByIdNullTest()
         {

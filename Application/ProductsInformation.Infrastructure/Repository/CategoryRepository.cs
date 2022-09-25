@@ -13,11 +13,17 @@ namespace ProductsInformation.Infrastructure.Repository
     {
         private PersistenceContext _db;
 
+        ///<summary>
+        ///The dependency for database consumption is injected.
+        ///</summary>
         public CategoryRepository(PersistenceContext db)
         {
             _db = db;
         }
 
+        ///<summary>
+        ///infrastructure layer that ultimately communicates with the database for category creation.
+        ///</summary>
         public Category Add(Category entity)
         {
             entity.Id = Guid.NewGuid();
@@ -25,6 +31,9 @@ namespace ProductsInformation.Infrastructure.Repository
             return entity;
         }
 
+        ///<summary>
+        ///Saves new or modified information in database.
+        ///</summary>
         public void SaveChanges()
         {
             _db.SaveChanges();

@@ -14,8 +14,12 @@ namespace ProductsInformation.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class CategoryController : ControllerBase
     {
+        ///<summary>
+        ///Instance for consumption of services is created.
+        ///</summary>
         Categories CreateService()
         {
             PersistenceContext db = new PersistenceContext();
@@ -24,7 +28,9 @@ namespace ProductsInformation.Api.Controllers
             return service;
         }
 
-        // POST api/<CategoryController>
+        ///<summary>
+        ///Post method creating the category.
+        ///</summary>
         [HttpPost]
         public ActionResult Post([FromBody] Category category)
         {

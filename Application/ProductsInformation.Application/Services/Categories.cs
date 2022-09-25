@@ -16,6 +16,9 @@ namespace ProductsInformation.Application.Services
             _CategoryRepo = CategoryRepo;
         }
 
+        ///<summary>
+        ///Method consumed by the Api Rest controller for category creation.
+        ///</summary>
         public Category Add(Category entity)
         {
             try

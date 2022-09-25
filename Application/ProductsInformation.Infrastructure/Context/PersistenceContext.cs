@@ -8,6 +8,9 @@ using System.Text;
 
 namespace ProductsInformation.Infrastructure.Context
 {
+    ///<summary>
+    ///Class mapping the database and its structure.
+    ///</summary>
     public partial class PersistenceContext: DbContext
     {
         public PersistenceContext()
@@ -33,6 +36,9 @@ namespace ProductsInformation.Infrastructure.Context
         public virtual DbSet<Shipper> Shipper { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
 
+        ///<summary>
+        ///Database connection is configured
+        ///</summary>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -41,6 +47,9 @@ namespace ProductsInformation.Infrastructure.Context
             }
         }
 
+        ///<summary>
+        ///information is obtained for each of the entities, with their respective structure
+        ///</summary>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CategoryConfig());
