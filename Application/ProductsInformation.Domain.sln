@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsInformation.Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsInformation.Infrastructure", "ProductsInformation.Infrastructure\ProductsInformation.Infrastructure.csproj", "{002B2942-16DF-472E-BF68-C43C4D601785}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsInformation.Api", "ProductsInformation.Api\ProductsInformation.Api.csproj", "{6886CB65-CF59-4B94-85D0-4D5D0135E721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsInformation.Api", "ProductsInformation.Api\ProductsInformation.Api.csproj", "{6886CB65-CF59-4B94-85D0-4D5D0135E721}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{23BA5735-C171-4A09-8D5B-610D50890F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsInformation.Tests", "ProductsInformation.Tests\ProductsInformation.Tests.csproj", "{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{6886CB65-CF59-4B94-85D0-4D5D0135E721}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6886CB65-CF59-4B94-85D0-4D5D0135E721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6886CB65-CF59-4B94-85D0-4D5D0135E721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE1A8EB4-D707-409C-8B9E-CDC142EC2988} = {23BA5735-C171-4A09-8D5B-610D50890F2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF3BF21D-BF71-42E7-9364-CFD845ECC3D9}

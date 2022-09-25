@@ -27,9 +27,9 @@ namespace ProductsInformation.Application.Services
                     return result;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                throw new ArgumentNullException("The Category is Required, error: " + ex);
+                throw new ArgumentNullException("Error creating category");
             }
             return new Category();
         }
