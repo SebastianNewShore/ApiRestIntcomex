@@ -54,7 +54,7 @@ namespace ProductsInformation.Api.Controllers
         }
 
         ///<summary>
-        ///Post method creating the Product.
+        ///POST method creating the Product.
         ///</summary>
         [HttpPost]
         public ActionResult Post([FromBody] Product product)

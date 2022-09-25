@@ -25,9 +25,16 @@ namespace ProductsInformation.Infrastructure.Repository
         ///</summary>
         public Product Add(Product entity)
         {
-            entity.Id = Guid.NewGuid();
-            _db.Product.Add(entity);
-            return entity;
+            try
+            {
+                entity.Id = Guid.NewGuid();
+                _db.Product.Add(entity);
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentNullException("error creating product object" + ex);
+            }
         }
 
         ///<summary>
@@ -35,7 +42,14 @@ namespace ProductsInformation.Infrastructure.Repository
         ///</summary>
         public List<Product> ListAll()
         {
-            return _db.Product.ToList();
+            try
+            {
+                return _db.Product.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentNullException("error consulting products" + ex);
+            }
         }
 
         ///<summary>
@@ -43,7 +57,14 @@ namespace ProductsInformation.Infrastructure.Repository
         ///</summary>
         public Product ListById(Guid entityId)
         {
-            return _db.Product.Where(x => x.Id == entityId).FirstOrDefault();
+            try
+            {
+                return _db.Product.Where(x => x.Id == entityId).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentNullException("error when querying product" + ex);
+            }
         }
 
         ///<summary>
@@ -51,7 +72,14 @@ namespace ProductsInformation.Infrastructure.Repository
         ///</summary>
         public void SaveChanges()
         {
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentNullException("Error creating product" + ex);
+            }
         }
     }
 }

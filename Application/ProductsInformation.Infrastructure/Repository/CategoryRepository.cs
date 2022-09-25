@@ -26,9 +26,15 @@ namespace ProductsInformation.Infrastructure.Repository
         ///</summary>
         public Category Add(Category entity)
         {
-            entity.Id = Guid.NewGuid();
-            _db.Category.Add(entity);
-            return entity;
+            try
+            {
+                entity.Id = Guid.NewGuid();
+                _db.Category.Add(entity);
+                return entity;
+            }
+            catch (Exception ex){
+                throw new ArgumentNullException("error creating category object" + ex);
+            } 
         }
 
         ///<summary>
@@ -36,7 +42,14 @@ namespace ProductsInformation.Infrastructure.Repository
         ///</summary>
         public void SaveChanges()
         {
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentNullException("Error creating category" + ex);
+            }
         }
     }
 }

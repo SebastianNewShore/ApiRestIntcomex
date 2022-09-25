@@ -13,8 +13,8 @@ using ProductsInformation.Infrastructure.Repository;
 namespace ProductsInformation.Api.Controllers
 {
     [Route("api/[controller]")]
+    [RequireHttps]
     [ApiController]
-
     public class CategoryController : ControllerBase
     {
         ///<summary>
