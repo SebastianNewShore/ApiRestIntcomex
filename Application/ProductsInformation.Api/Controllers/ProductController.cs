@@ -28,16 +28,22 @@ namespace ProductsInformation.Api.Controllers
         [HttpGet]
         public ActionResult<List<Product>> Get()
         {
-            var service = CreateService();
-            return Ok(service.ListAll());
+            var response = CreateService().ListAll();
+            if(response.Count > 0)
+                return Ok(response);
+            else
+                return Ok(Constants.Constants.existInformation);
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
         public ActionResult<Product> Get(Guid id)
         {
-            var service = CreateService();
-            return Ok(service.ListById(id));
+            var response = CreateService().ListById(id);
+            if (response != null)
+                return Ok(response);
+            else
+                return Ok(Constants.Constants.notFound);
         }
 
         // POST api/<ProductController>
@@ -46,7 +52,7 @@ namespace ProductsInformation.Api.Controllers
         {
             var service = CreateService();
             service.Add(product);
-            return Ok("Product added correctly");
+            return Ok(Constants.Constants.addedInformation);
         }
     }
 }

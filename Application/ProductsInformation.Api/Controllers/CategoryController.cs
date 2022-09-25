@@ -30,7 +30,7 @@ namespace ProductsInformation.Api.Controllers
         {
             var service = CreateService();
             service.Add(category);
-            return Ok("Category added correctly");
+            return Ok(Constants.Constants.addedInformation);
         }
     }
 }
