@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsInformation.Api", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{23BA5735-C171-4A09-8D5B-610D50890F2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsInformation.Tests", "ProductsInformation.Tests\ProductsInformation.Tests.csproj", "{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsInformation.Tests", "ProductsInformation.Tests\ProductsInformation.Tests.csproj", "{DE1A8EB4-D707-409C-8B9E-CDC142EC2988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

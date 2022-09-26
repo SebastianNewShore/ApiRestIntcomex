@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "f228b32e-9d4a-4f72-ad8b-79dabed131bb",
+		"name": "INTCOMEX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20189387"
+	},
+	"item": [
+		{
+			"name": "ListOfProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44370/Api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"Api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductsById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44370/Api/Product/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"Api",
+						"Product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "intcomex",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Azure Kubernetes Service (AKS)\",\r\n    \"quantityPerunit\": 1,\r\n    \"unitPrice\": 200000,\r\n    \"unitsinStock\": 50,\r\n    \"unitsonOrder\": 100,\r\n    \"recorderLevel\": 0,\r\n    \"active\": true,\r\n    \"idSuppliers\": \"6E4B8678-37DE-4746-8558-BA91E7531FB5\",\r\n    \"idCategory\": \"8C24F039-B8FC-4FC9-B8D1-D245FE5A1315\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://intcomexapi.azurewebsites.net/Api/Product",
+					"protocol": "https",
+					"host": [
+						"intcomexapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCategory",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
