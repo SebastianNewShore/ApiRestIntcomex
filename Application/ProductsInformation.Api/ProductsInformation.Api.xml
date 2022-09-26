@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductsInformation.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ProductsInformation.Api.Controllers.CategoryController.CreateService">
+            <summary>
+            Instance for consumption of services is created.
+            </summary>
+        </member>
+        <member name="M:ProductsInformation.Api.Controllers.CategoryController.Post(ProductsInformation.Domain.Category)">
+            <summary>
+            Post method creating the category.
+            </summary>
+        </member>
+        <member name="M:ProductsInformation.Api.Controllers.ProductController.CreateService">
+            <summary>
+            Instance for consumption of services is created.
+            </summary>
+        </member>
+        <member name="M:ProductsInformation.Api.Controllers.ProductController.Get">
+            <summary>
+            GET() method that fetches all the existing products.
+            </summary>
+        </member>
+        <member name="M:ProductsInformation.Api.Controllers.ProductController.Get(System.Guid)">
+            <summary>
+            GET() method querying a product by Id.
+            </summary>
+        </member>
+        <member name="M:ProductsInformation.Api.Controllers.ProductController.Post(ProductsInformation.Domain.Product)">
+            <summary>
+            POST method creating the Product.
+            </summary>
+        </member>
+    </members>
+</doc>
