@@ -43,7 +43,8 @@ namespace ProductsInformation.Infrastructure.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=PC-SCASTANO; Database=INTCOMEX; Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=pruebasebasql.database.windows.net; Database=INTCOMEX;User Id=adminSql;Password=Luciana1227");
+                //optionsBuilder.UseSqlServer("Server=PC-SCASTANO; Database=INTCOMEX; Trusted_Connection=True;");
             }
         }
 
