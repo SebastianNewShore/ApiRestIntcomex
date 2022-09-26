@@ -19,7 +19,7 @@
             Instance for consumption of services is created.
             </summary>
         </member>
-        <member name="M:ProductsInformation.Api.Controllers.ProductController.Get">
+        <member name="M:ProductsInformation.Api.Controllers.ProductController.Get(System.Int32,System.Int32)">
             <summary>
             GET() method that fetches all the existing products.
             </summary>

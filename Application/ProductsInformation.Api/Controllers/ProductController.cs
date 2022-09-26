@@ -34,9 +34,12 @@ namespace ProductsInformation.Api.Controllers
         ///GET() method that fetches all the existing products.
         ///</summary>
         [HttpGet]
-        public ActionResult<List<Product>> Get()
+        public ActionResult<List<Product>> Get(int pag, int reg)
         {
-            var response = CreateService().ListAll();
+            if(reg > Constants.Constants.MaxRumOfRecords)
+                return Ok("Maximum number of records allowed is " + Constants.Constants.MaxRumOfRecords);
+
+            var response = CreateService().ListAll(pag,reg);
             if(response.Count > 0)
                 return Ok(response);
             else

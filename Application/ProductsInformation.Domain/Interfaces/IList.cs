@@ -9,7 +9,7 @@ namespace ProductsInformation.Domain.Interfaces
     ///</summary>
     public interface IList<TEntity, TEntityId>
     {
-        List<TEntity> ListAll();
+        List<TEntity> ListAll(int pag, int reg);
         TEntity ListById(TEntityId entityId);
     }
 }

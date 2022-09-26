@@ -42,11 +42,11 @@ namespace ProductsInformation.Application.Services
         ///<summary>
         ///Method consumed by Api Rest controller to fetch the whole list of products.
         ///</summary>
-        public List<Product> ListAll()
+        public List<Product> ListAll(int pag, int reg)
         {
             try
             {
-                return _ListProducRepo.ListAll();
+                return _ListProducRepo.ListAll(pag,reg);
             }
             catch (Exception ex)
             {

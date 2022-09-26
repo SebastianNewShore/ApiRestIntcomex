@@ -4,7 +4,6 @@ using ProductsInformation.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ProductsInformation.Infrastructure.Repository
 {
@@ -40,11 +39,11 @@ namespace ProductsInformation.Infrastructure.Repository
         ///<summary>
         ///infrastructure layer that ultimately communicates with the database for listing products.
         ///</summary>
-        public List<Product> ListAll()
+        public List<Product> ListAll(int pag, int reg)
         {
             try
             {
-                return _db.Product.ToList();
+                return _db.Product.OrderBy(x => x.Id).Skip(pag).Take(reg).ToList();
             }
             catch (Exception ex)
             {
