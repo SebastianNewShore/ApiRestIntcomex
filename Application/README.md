@@ -5,6 +5,7 @@ Tecnologias utilizadas
 
 - Arquitectura Hexagonal 3 capas (Dommain, Application, Infrastructure, Api)
 - .Net Core 3.1, EntityFramework, LinQ, json, SqlServer
+- Gitflow
 - Aplicación de principios Solid
 - Creación de pruebas unitarias
 - autorización por medio de usuario y contraseña para consumo de servicios.
