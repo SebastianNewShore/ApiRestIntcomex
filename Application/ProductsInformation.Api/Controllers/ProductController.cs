@@ -7,12 +7,15 @@ using ProductsInformation.Domain;
 using ProductsInformation.Application.Services;
 using ProductsInformation.Infrastructure.Context;
 using ProductsInformation.Infrastructure.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ProductsInformation.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
+    [RequireHttps]
     [ApiController]
     public class ProductController : ControllerBase
     {

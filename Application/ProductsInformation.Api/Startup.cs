@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Migracion.Api.Handlers;
+using ProductsInformation.Api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +29,37 @@ namespace ProductsInformation.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<PropertiesSettings>(opts => Configuration.GetSection("PropertiesSettings").Bind(opts));
+            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "INTCOMEX.API", Version = "v1" });
+
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "INTCOMEX.API" });
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Auth Header"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                          Reference = new OpenApiReference
+                          {
+                           Type = ReferenceType.SecurityScheme,
+                           Id = "basic"
+                           }
+                          },
+                        new string[]{ }
+
+                    }
+
+                 });
             });
         }
 
@@ -47,6 +77,7 @@ namespace ProductsInformation.Api
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
