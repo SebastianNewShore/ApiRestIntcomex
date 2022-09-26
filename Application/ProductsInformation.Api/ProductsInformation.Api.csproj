@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\scastano\Desktop\INTCOMEX\Application\ApiRest\Application\ProductsInformation.Api\ProductsInformation.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductsInformation.Application\ProductsInformation.Application.csproj" />
+    <ProjectReference Include="..\ProductsInformation.Domain\ProductsInformation.Domain.csproj" />
+    <ProjectReference Include="..\ProductsInformation.Infrastructure\ProductsInformation.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>
